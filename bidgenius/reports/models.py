@@ -17,6 +17,9 @@ class CancelledAuctions(models.Model):
     cancelation_reason = models.TextField()
     cancelled_by = models.CharField(max_length=10, choices=CANCEL_CHOICES)
 
+
+
+
     
 
 

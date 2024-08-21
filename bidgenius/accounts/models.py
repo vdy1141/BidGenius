@@ -7,11 +7,17 @@ class Country(models.Model):
     country_name = models.CharField(max_length = 30)
     country_code = models.CharField(max_length = 5)
 
+    def __str__(self):
+        return f"Country={self.country_name},Code={self.country_code}"
+
     
 class State(models.Model):
     state_id = models.BigAutoField(primary_key = True)
     state_name = models.CharField(max_length = 30)
     country = models.ForeignKey(Country, on_delete = models.CASCADE, related_name= 'states')
+
+    def __str__(self):
+        return f"State={self.state_name},{self.country}"
 
     
 class City(models.Model):
@@ -20,7 +26,7 @@ class City(models.Model):
     state = models.ForeignKey(State, on_delete = models.CASCADE, related_name= 'cities')
 
     def __str__(self) -> str:
-        return f'{self.city_name}'
+        return f'City={self.city_name},{self.state}'
 
     
 class User(AbstractUser):
