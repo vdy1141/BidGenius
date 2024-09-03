@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from phonenumber_field.modelfields import PhoneNumberField
 
+from django.core.exceptions import ValidationError
+
 class Country(models.Model):
     country_id = models.BigAutoField(primary_key = True)
     country_name = models.CharField(max_length = 30)
@@ -34,6 +36,11 @@ class User(AbstractUser):
     address = models.TextField(blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='users', blank=True, null=True)
     pincode = models.PositiveIntegerField(blank=True, null=True)
+   
+
+def __str__(self):
+        return self.username
+
 
         
 class BankInformation(models.Model):
