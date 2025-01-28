@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-from . serializers import ProductInfoSerializer,ImageSerializer, 
+from . serializers import ProductInfoSerializer,ImageSerializer
 from . models import ProductInformation,ProductImages
 
 class UserViewSet(viewsets.ModelViewSet):
