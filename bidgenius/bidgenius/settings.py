@@ -153,20 +153,11 @@ MEDIA_ROOT = 'media'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-
-=======
->>>>>>> pooja
-=======
->>>>>>> shivanik
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-<<<<<<< HEAD
-<<<<<<< HEAD
 EMAIL_HOST_USER ='yog.esh.6g1a9@gmail.com'
 EMAIL_HOST_PASSWORD ='dcej pzpx gnqi rnod'
 
@@ -174,53 +165,14 @@ CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULER ='django_celery_beat.schedulers:DatabaseScheduler'
-=======
-EMAIL_HOST_USER = "shivanikadam731@gmail.com"
-EMAIL_HOST_PASSWORD = 'ozij qcoo lxfz usqx'
 
->>>>>>> shivanik
-
+# EMAIL_HOST_USER = "shivanikadam731@gmail.com"
+# EMAIL_HOST_PASSWORD = 'ozij qcoo lxfz usqx'
 
 from datetime import timedelta
 
-<<<<<<< HEAD
 SIMPLE_JWT={
     "ACCESS_TOKEN_LIFETIME":timedelta(hours=2),
     "REFRESH_TOKEN_LIFETIME":timedelta(days=2),
-    "TOKEN_OBTAIN_SERIALIZER":"accounts.serializers.CustomToken"
+    "TOKEN_OBTAIN_SERIALIZER":"accounts.serializers.CustomTokenObtainPairSerializer"
 }
-
-=======
-EMAIL_HOST_USER = "poojameshram900@gmail.com"
-EMAIL_HOST_PASSWORD = "gahp blrk ixvz jhlq"
-
-
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        
-    ],
-    
-}
-
-# from datetime import timedelta
-# SIMPLE_JWT ={
-#     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
-#     'REFRESH_TOKEN_LIFETIME':timedelta(days=7),
-#     'TOKEN_OBTAIN_SERIALIZER':'accounts.serializers.CustomTokenObtainPairSerializer'
-# }
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework.authentication.TokenAuthentication',
-#     ],
-
-# }
->>>>>>> pooja
-=======
-
-
-SIMPLE_JWT={'TOKEN_OBTAIN_SERIALIZER':'accounts.serializers.CustomTokenObtainPairSerializer',
-'ACCESS_TOKEN_LIFETIME' :timedelta(days=7),  
-'REFRESH_TOKEN_LIFETIME' : timedelta(days=7) }
->>>>>>> shivanik

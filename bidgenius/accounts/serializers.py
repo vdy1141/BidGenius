@@ -1,10 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 from rest_framework import serializers
 from .models import User,Country,State,City
 from rest_framework import serializers
 from .models import Country, State, City
 from seller.serializers import ProductInfoSerializer,ProductCategorySerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from typing import Any, Dict
+from rest_framework import serializers
+from .models import User
+from phonenumber_field.serializerfields import PhoneNumberField
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
@@ -43,28 +46,6 @@ class CustomToken(TokenObtainPairSerializer):
         obj=self.user
         data['role']=obj.role
         return data
-=======
-# from typing import Any, Dict
-# from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-# from rest_framework import serializers
-# from .models import User
-
-
-# class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-
-#     def validate(self, attrs):
-#         data = super().validate(attrs)
-#         obj = self.user
-#         data['role'] = obj.role
-#         return data
->>>>>>> pooja
-=======
-from typing import Any, Dict
-from rest_framework import serializers
-from .models import User
-from phonenumber_field.serializerfields import PhoneNumberField
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -83,7 +64,3 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         obj=self.user
         data['role']=obj.role
         return data     
-
-
-        
->>>>>>> shivanik

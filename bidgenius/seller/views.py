@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-from . serializers import ProductInfoSerializer,ImageSerializer
+from . serializers import ProductInfoSerializer,ImageSerializer, 
 from . models import ProductInformation,ProductImages
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -18,13 +17,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class ImageViewset(viewsets.ModelViewSet):
     serializer_class=ImageSerializer
     queryset=ProductImages.objects.all()
-=======
->>>>>>> shivanik
-
-from rest_framework import viewsets
-from .models import ProductInformation
-from .serializers import ProductInformationSerializer
 
 class ProductInformationViewSet(viewsets.ModelViewSet):
     queryset = ProductInformation.objects.all()
-    serializer_class = ProductInformationSerializer
+    serializer_class = ProductInfoSerializer

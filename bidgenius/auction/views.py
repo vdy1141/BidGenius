@@ -1,13 +1,16 @@
-<<<<<<< HEAD
 
 from django.utils import timezone
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from .models import AuctionDetails
+from .models import AuctionDetails, AuctionDetailsSerializer
 from .serializers import AuctionSerializer
 from datetime import datetime, timedelta
 from .tasks import send_auction_notification
+from rest_framework import status
+from rest_framework.views import APIView
+from django.utils.dateparse import parse_date
+
 
 # Schedule email to be sent in 10 minutes
 # send_time = datetime.utcnow() + timedelta(minutes=10)
@@ -42,14 +45,6 @@ class AuctionViewSet(viewsets.ModelViewSet):
     #         eta=auction_start_datetime
     #     )
 
-=======
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .models import AuctionDetails
-from .serializers import AuctionDetailsSerializer
-from django.utils.dateparse import parse_date
->>>>>>> shivanik
 
 class CreateAuctionDetailsAPIView(APIView):
     def post(self, request):
@@ -63,13 +58,6 @@ class CreateAuctionDetailsAPIView(APIView):
             return Response({
                 "errors": serializer.errors
             }, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
-
-
-
 
 
 class AuctionDetailsByDateAPIView(APIView):

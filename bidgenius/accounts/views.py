@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.contrib.sites.shortcuts import get_current_site
 from .serializers import AccountSerializer,User,CountrySerializer, StateSerializer, CitySerializer
@@ -85,7 +84,6 @@ class CityList(generics.ListAPIView):
     def get_queryset(self):
         state_id = self.request.query_params.get('state_id')
         return City.objects.filter(state_id=state_id)
-=======
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -201,4 +199,3 @@ class LoginVerifyView(APIView):
                 return Response({'error': 'User is not authenticated.'}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({'error': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
->>>>>>> shivanik

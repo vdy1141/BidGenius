@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from . models import ProductInformation,ProductCategory,ProductImages
 from rest_framework import serializers
 
@@ -22,12 +21,3 @@ class ProductInfoSerializer(serializers.ModelSerializer):
         model=ProductInformation
        # fields='__all__'
         fields=['product_id','product_name','product_description','product_manufacture_year','product_base_price','category','owner','product_imagess']
-=======
-from rest_framework import serializers
-from seller.models import ProductInformation
-
-class ProductInformationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProductInformation
-        fields = '__all__'
->>>>>>> shivanik

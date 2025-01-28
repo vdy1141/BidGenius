@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 from . models import AuctionDetails
 from rest_framework import serializers
+from django.utils import timezone
+from datetime import timedelta
+
 
 class AuctionSerializer(serializers.ModelSerializer):
     class Meta:
         model=AuctionDetails
         fields='__all__'
-=======
-from rest_framework import serializers
-from .models import AuctionDetails
-from django.utils import timezone
-from datetime import timedelta
 
 class AuctionDetailsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -39,4 +36,3 @@ class AuctionDetailsSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Increment amount must be positive.")
         
         return data
->>>>>>> shivanik
