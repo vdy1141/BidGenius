@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.timezone import now
 
 class AuctionDetails(models.Model):
     product = models.OneToOneField('seller.ProductInformation', on_delete = models.CASCADE, related_name = 'auction')
