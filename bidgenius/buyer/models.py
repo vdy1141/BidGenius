@@ -7,6 +7,7 @@ class WishList(models.Model):
 
 
 class Transactions(models.Model):
+<<<<<<< HEAD
     CHOICES={
         'Credit Card':'Credit Card',
         'Debit Card':'Debit Card',
@@ -19,3 +20,15 @@ class Transactions(models.Model):
     transaction_date= models.DateTimeField(auto_now_add=True ,blank=True,null=True)
     transaction_status=models.CharField(max_length=20 ,blank=True,null=True)
     
+=======
+    CHOICES ={
+        'Credit Card' :'Credit Card',
+        'Debit Crad' :'Debit Card',
+        'Wallet':'Wallet'
+    }
+    transaction_amount= models.FloatField(blank=True,null=True)
+    transaction_method=models.CharField(max_length=32,choices=CHOICES,blank=True,null=True)
+    user=models.ForeignKey('accounts.User',on_delete=models.CASCADE,blank=True,null=True)
+    transaction_date = models.DateTimeField(auto_now_add=True,blank=True,null=True)
+    transaction_status = models.CharField(max_length=20, blank=True,null=True)
+>>>>>>> pooja

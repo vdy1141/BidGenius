@@ -153,11 +153,15 @@ MEDIA_ROOT = 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> pooja
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+<<<<<<< HEAD
 EMAIL_HOST_USER ='yog.esh.6g1a9@gmail.com'
 EMAIL_HOST_PASSWORD ='dcej pzpx gnqi rnod'
 
@@ -175,3 +179,30 @@ SIMPLE_JWT={
     "TOKEN_OBTAIN_SERIALIZER":"accounts.serializers.CustomToken"
 }
 
+=======
+EMAIL_HOST_USER = "poojameshram900@gmail.com"
+EMAIL_HOST_PASSWORD = "gahp blrk ixvz jhlq"
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        
+    ],
+    
+}
+
+# from datetime import timedelta
+# SIMPLE_JWT ={
+#     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
+#     'REFRESH_TOKEN_LIFETIME':timedelta(days=7),
+#     'TOKEN_OBTAIN_SERIALIZER':'accounts.serializers.CustomTokenObtainPairSerializer'
+# }
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+
+# }
+>>>>>>> pooja
